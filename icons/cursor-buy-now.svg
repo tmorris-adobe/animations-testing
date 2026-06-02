@@ -4,9 +4,11 @@
     <ellipse cx="50" cy="55" rx="42" ry="47"/>
   </clipPath>
   <g clip-path="url(#oval-clip)">
-    <text font-family="sans-serif" font-size="12" font-weight="700" fill="#feeee2" y="59" text-anchor="middle">
-      <animate attributeName="x" from="140" to="-140" dur="3s" repeatCount="indefinite"/>
-      BUY NOW • BUY NOW • BUY NOW
-    </text>
+    <g>
+      <animateTransform attributeName="transform" type="translate" from="90 0" to="-90 0" dur="3s" repeatCount="indefinite"/>
+      <text font-family="sans-serif" font-size="10" font-weight="700" fill="#feeee2" x="0" y="45">BUY NOW • BUY NOW • BUY NOW</text>
+      <text font-family="sans-serif" font-size="10" font-weight="700" fill="#feeee2" x="0" y="58">BUY NOW • BUY NOW • BUY NOW</text>
+      <text font-family="sans-serif" font-size="10" font-weight="700" fill="#feeee2" x="0" y="71">BUY NOW • BUY NOW • BUY NOW</text>
+    </g>
   </g>
 </svg>
