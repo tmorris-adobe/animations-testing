@@ -1,0 +1,68 @@
+main .food-pairing {
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+main .food-pairing .food-pairing-track {
+  display: flex;
+  width: max-content;
+  gap: 2rem;
+  align-items: center;
+}
+
+main .food-pairing .food-pairing-track.food-pairing-right.is-scrolling {
+  animation: marquee-left 25s linear infinite;
+}
+
+main .food-pairing .food-pairing-track.food-pairing-left.is-scrolling {
+  animation: marquee-right 25s linear infinite;
+}
+
+main .food-pairing .food-pairing-segment {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  white-space: nowrap;
+}
+
+main .food-pairing .food-pairing-label {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+main .food-pairing .food-pairing-food {
+  font-family: var(--heading-font-family);
+  font-size: var(--display-font-size);
+  font-weight: 700;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+main .food-pairing .food-pairing-image {
+  display: flex;
+  align-items: center;
+}
+
+main .food-pairing .food-pairing-image picture {
+  display: block;
+}
+
+main .food-pairing .food-pairing-image img {
+  height: 100px;
+  width: auto;
+}
+
+@media (width >= 900px) {
+  main .food-pairing .food-pairing-image img {
+    height: 160px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main .food-pairing .food-pairing-track {
+    animation: none !important;
+  }
+}

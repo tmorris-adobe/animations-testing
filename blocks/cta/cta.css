@@ -1,0 +1,45 @@
+main .cta {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+main .cta .cta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+main .cta .cta-content h2 {
+  font-size: var(--heading-font-size-xxl);
+  margin-bottom: 1rem;
+}
+
+main .cta .cta-content p {
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+main .cta .cta-image img {
+  max-width: 200px;
+  height: auto;
+}
+
+@media (width >= 900px) {
+  main .cta {
+    padding: 120px 48px;
+  }
+
+  main .cta .cta-row {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  main .cta .cta-image img {
+    max-width: 300px;
+  }
+}

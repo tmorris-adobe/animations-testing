@@ -1,0 +1,36 @@
+main .large-text {
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+main .large-text .large-text-track {
+  display: flex;
+  width: max-content;
+  gap: 2rem;
+  align-items: center;
+}
+
+main .large-text .large-text-track.large-text-right.is-scrolling {
+  animation: marquee-left 20s linear infinite;
+}
+
+main .large-text .large-text-track.large-text-left.is-scrolling {
+  animation: marquee-right 20s linear infinite;
+}
+
+main .large-text .large-text-item {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: var(--display-font-size);
+  text-transform: uppercase;
+  color: var(--accent-color);
+  white-space: nowrap;
+  line-height: 1;
+  padding: 0 2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main .large-text .large-text-track {
+    animation: none !important;
+  }
+}

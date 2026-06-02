@@ -485,10 +485,9 @@ async function loadEager(doc) {
 function initScrollReveal(main) {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const sections = main.querySelectorAll('.section');
-  sections.forEach((section, i) => {
-    if (i === 0) return;
-    section.classList.add('scroll-reveal');
+  const revealTargets = main.querySelectorAll('.text-panel, .split-panel, .cta');
+  revealTargets.forEach((el) => {
+    el.classList.add('scroll-reveal');
   });
 
   const observer = new IntersectionObserver((entries) => {
