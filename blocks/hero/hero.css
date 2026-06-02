@@ -48,16 +48,19 @@ main .hero .hero-images {
 }
 
 main .hero .hero-bottle {
-  position: sticky;
-  top: 10vh;
-  z-index: 3;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  margin-left: -60px;
+  margin-top: -150px;
   will-change: transform;
+  pointer-events: none;
 }
 
 main .hero .hero-bottle img {
-  height: 50vh;
+  height: 300px;
   width: auto;
-  max-height: 400px;
 }
 
 main .hero .hero-logo img {
@@ -68,18 +71,6 @@ main .hero .hero-logo img {
 main .hero .hero-fire img {
   width: 60px;
   height: auto;
-}
-
-main .hero .hero-badge {
-  position: absolute;
-  bottom: 10%;
-  right: 10%;
-  text-align: right;
-}
-
-main .hero .hero-badge h2 {
-  font-size: var(--heading-font-size-m);
-  margin: 0;
 }
 
 @media (width >= 900px) {
@@ -98,9 +89,13 @@ main .hero .hero-badge h2 {
     flex: 1;
   }
 
+  main .hero .hero-bottle {
+    margin-left: -80px;
+    margin-top: -200px;
+  }
+
   main .hero .hero-bottle img {
-    max-height: 700px;
-    height: 70vh;
+    height: 400px;
   }
 
   main .hero .hero-logo img {

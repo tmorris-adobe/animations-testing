@@ -61,10 +61,9 @@ export default function decorate(block) {
   function onScroll() {
     if (!ticking) {
       requestAnimationFrame(() => {
-        const { scrollY, innerHeight: viewportHeight } = window;
-        const progress = Math.min(scrollY / (viewportHeight * 2), 1);
-
-        const translateX = Math.sin(progress * Math.PI) * 55;
+        const { scrollY } = window;
+        const speed = 0.0035;
+        const translateX = Math.sin(scrollY * speed) * 55;
         const rotate = translateX * 0.15;
 
         bottle.style.transform = `translateX(${translateX}vw) rotate(${rotate}deg)`;
@@ -74,15 +73,5 @@ export default function decorate(block) {
     }
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        window.addEventListener('scroll', onScroll, { passive: true });
-      } else {
-        window.removeEventListener('scroll', onScroll);
-      }
-    });
-  }, { threshold: 0 });
-
-  observer.observe(block);
+  window.addEventListener('scroll', onScroll, { passive: true });
 }
