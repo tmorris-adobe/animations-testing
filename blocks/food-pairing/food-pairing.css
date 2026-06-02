@@ -1,6 +1,6 @@
 main .food-pairing {
   overflow: hidden;
-  padding: 20px 0;
+  padding: 8px 0;
 }
 
 main .food-pairing .food-pairing-track {
@@ -27,9 +27,15 @@ main .food-pairing .food-pairing-segment {
 
 main .food-pairing .food-pairing-label {
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
+  font-size: 12px;
   color: var(--accent-color);
   text-transform: uppercase;
+}
+
+@media (width >= 900px) {
+  main .food-pairing .food-pairing-label {
+    font-size: 16px;
+  }
 }
 
 main .food-pairing .food-pairing-food {

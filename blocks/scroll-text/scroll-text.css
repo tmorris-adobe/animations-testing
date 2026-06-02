@@ -1,9 +1,9 @@
 main .scroll-text {
   overflow: hidden;
-  padding: 40px 0;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
 main .scroll-text .scroll-text-strip {

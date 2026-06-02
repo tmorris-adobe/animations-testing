@@ -1,43 +1,58 @@
 main .split-panel {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 60px 24px;
+  gap: 1.5rem;
+  padding: 40px 24px;
 }
 
 main .split-panel .split-panel-item {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 24px;
+  padding: 32px 24px;
+  text-align: center;
 }
 
 main .split-panel .split-panel-content h2 {
-  font-size: var(--heading-font-size-xl);
-  margin-bottom: 1rem;
+  font-size: var(--heading-font-size-l);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
 main .split-panel .split-panel-content p {
-  font-size: var(--body-font-size-s);
-  line-height: 1.5;
+  font-size: var(--body-font-size-xs);
+  line-height: 1.4;
   text-transform: uppercase;
 }
 
 main .split-panel .split-panel-image img {
   width: 100%;
+  max-width: 200px;
   height: auto;
-  border-radius: 8px;
+  margin: 0 auto;
+  display: block;
 }
 
 @media (width >= 900px) {
   main .split-panel {
     flex-direction: row;
-    padding: 80px 48px;
+    padding: 40px 48px;
     align-items: stretch;
   }
 
   main .split-panel .split-panel-item {
     flex: 1;
-    flex-direction: column;
     justify-content: center;
+    padding: 40px 32px;
+  }
+
+  main .split-panel .split-panel-content h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  main .split-panel .split-panel-content p {
+    font-size: var(--body-font-size-s);
   }
 }
