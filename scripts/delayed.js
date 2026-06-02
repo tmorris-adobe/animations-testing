@@ -29,7 +29,7 @@ function initCustomCursor() {
   function animate() {
     currentX += (cursorX - currentX) * 0.15;
     currentY += (cursorY - currentY) * 0.15;
-    cursor.style.transform = `translate(${currentX - 60}px, ${currentY - 40}px)`;
+    cursor.style.transform = `translate(${currentX - 50}px, ${currentY - 55}px)`;
     requestAnimationFrame(animate);
   }
 

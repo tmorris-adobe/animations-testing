@@ -16,7 +16,7 @@ export default function decorate(block) {
 
     const separator = document.createElement('span');
     separator.className = 'marquee-separator';
-    separator.textContent = '★';
+    separator.textContent = '✦';
     track.append(separator);
   });
 
