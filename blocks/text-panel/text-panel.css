@@ -1,0 +1,23 @@
+main .text-panel {
+  padding: 80px 24px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+main .text-panel h2 {
+  font-size: var(--heading-font-size-xxl);
+  margin-bottom: 1.5rem;
+}
+
+main .text-panel p {
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+@media (width >= 900px) {
+  main .text-panel {
+    padding: 120px 48px;
+  }
+}

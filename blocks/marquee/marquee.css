@@ -1,0 +1,50 @@
+main .marquee {
+  overflow: hidden;
+  padding: 12px 0;
+  background-color: var(--background-color);
+  border-top: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+}
+
+main .marquee .marquee-wrapper {
+  display: flex;
+  width: max-content;
+}
+
+main .marquee .marquee-wrapper.marquee-left .marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  white-space: nowrap;
+  animation: marquee-left var(--marquee-speed, 20s) linear infinite;
+}
+
+main .marquee .marquee-wrapper.marquee-right .marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  white-space: nowrap;
+  animation: marquee-right var(--marquee-speed, 20s) linear infinite;
+}
+
+main .marquee .marquee-item {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: var(--heading-font-size-s);
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+
+main .marquee .marquee-separator {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: var(--heading-font-size-s);
+  color: var(--accent-color);
+  opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main .marquee .marquee-wrapper .marquee-track {
+    animation: none;
+  }
+}

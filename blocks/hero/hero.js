@@ -10,29 +10,32 @@ export default function decorate(block) {
   rows.forEach((row) => {
     const cells = [...row.children];
     cells.forEach((cell) => {
-      const pic = cell.querySelector('picture');
-      if (pic) {
-        const img = pic.querySelector('img');
-        const alt = img?.alt || '';
-        const wrapper = document.createElement('div');
+      const pictures = cell.querySelectorAll('picture');
+      if (pictures.length > 0) {
+        pictures.forEach((pic) => {
+          const img = pic.querySelector('img');
+          const alt = (img?.alt || '').toLowerCase();
+          const wrapper = document.createElement('div');
 
-        if (alt.toLowerCase().includes('bottle')) {
-          wrapper.className = 'hero-bottle';
-        } else if (alt.toLowerCase().includes('logo')) {
-          wrapper.className = 'hero-logo';
-        } else {
-          wrapper.className = 'hero-fire';
-        }
-        wrapper.append(pic);
-        images.append(wrapper);
+          if (alt.includes('bottle')) {
+            wrapper.className = 'hero-bottle';
+          } else if (alt.includes('logo')) {
+            wrapper.className = 'hero-logo';
+          } else {
+            wrapper.className = 'hero-fire';
+          }
+          wrapper.append(pic);
+          images.append(wrapper);
+        });
       } else {
-        const heading = cell.querySelector('h1, h2, h3');
+        const heading = cell.querySelector('h1');
+        const headings = cell.querySelectorAll('h2, h3');
         const paragraphs = cell.querySelectorAll('p');
         const link = cell.querySelector('a');
 
         if (heading) content.append(heading);
         paragraphs.forEach((p) => {
-          if (!p.querySelector('a')) content.append(p);
+          if (!p.querySelector('a') && !p.querySelector('picture')) content.append(p);
         });
         if (link) {
           link.className = 'button primary';
@@ -41,6 +44,7 @@ export default function decorate(block) {
           wrapper.append(link);
           content.append(wrapper);
         }
+        headings.forEach((h) => content.append(h));
       }
     });
   });
@@ -57,10 +61,13 @@ export default function decorate(block) {
   function onScroll() {
     if (!ticking) {
       requestAnimationFrame(() => {
-        const rect = block.getBoundingClientRect();
-        const progress = Math.max(0, Math.min(1, -rect.top / rect.height));
-        const scale = 1 + progress * 0.15;
-        bottle.style.transform = `scale(${scale})`;
+        const { scrollY, innerHeight: viewportHeight } = window;
+        const progress = Math.min(scrollY / (viewportHeight * 2), 1);
+
+        const translateX = Math.sin(progress * Math.PI) * 55;
+        const rotate = translateX * 0.15;
+
+        bottle.style.transform = `translateX(${translateX}vw) rotate(${rotate}deg)`;
         ticking = false;
       });
       ticking = true;

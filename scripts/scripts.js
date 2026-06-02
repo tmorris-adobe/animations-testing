@@ -502,6 +502,40 @@ function initScrollReveal(main) {
   main.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
 }
 
+function initStarRotation(main) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const stars = main.querySelectorAll('.icon-star, .icon-star-2');
+  if (!stars.length) return;
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const rotation = window.scrollY * 0.5;
+        stars.forEach((star) => {
+          star.style.transform = `rotate(${rotation}deg)`;
+        });
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+function initPageLoadAnimation() {
+  const overlay = document.createElement('div');
+  overlay.className = 'page-overlay';
+  document.body.append(overlay);
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      overlay.classList.add('hidden');
+      overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
+    });
+  });
+}
+
 /**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
@@ -513,6 +547,8 @@ async function loadLazy(doc) {
   await loadSections(main);
 
   initScrollReveal(main);
+  initStarRotation(main);
+  initPageLoadAnimation();
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;

@@ -18,7 +18,7 @@ main .hero {
   justify-content: center;
   padding: var(--hero-padding);
   text-align: center;
-  overflow: hidden;
+  overflow: visible;
 }
 
 main .hero .hero-content {
@@ -49,16 +49,15 @@ main .hero .hero-images {
 
 main .hero .hero-bottle {
   position: sticky;
-  top: 20vh;
+  top: 10vh;
   z-index: 3;
-  transition: transform 0.1s linear;
   will-change: transform;
 }
 
 main .hero .hero-bottle img {
-  height: 60vh;
+  height: 50vh;
   width: auto;
-  max-height: 500px;
+  max-height: 400px;
 }
 
 main .hero .hero-logo img {
@@ -67,7 +66,7 @@ main .hero .hero-logo img {
 }
 
 main .hero .hero-fire img {
-  width: 80px;
+  width: 60px;
   height: auto;
 }
 
