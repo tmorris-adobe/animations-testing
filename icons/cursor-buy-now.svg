@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" width="120" height="80">
+  <ellipse cx="60" cy="40" rx="55" ry="35" fill="none" stroke="#feeee2" stroke-width="2"/>
+  <defs>
+    <path id="cp" d="M 60,8 A 52,32 0 1,1 59.99,8" fill="none"/>
+  </defs>
+  <text font-family="sans-serif" font-size="7" font-weight="700" fill="#feeee2" letter-spacing="2" text-transform="uppercase">
+    <textPath href="#cp">BUY NOW • BUY NOW • BUY NOW • </textPath>
+    <animateTransform attributeName="transform" type="rotate" from="0 60 40" to="360 60 40" dur="8s" repeatCount="indefinite"/>
+  </text>
+</svg>
