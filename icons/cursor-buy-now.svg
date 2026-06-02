@@ -1,19 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" width="100" height="110">
-  <ellipse cx="50" cy="55" rx="45" ry="50" fill="none" stroke="#feeee2" stroke-width="3"/>
-  <clipPath id="oval-clip">
-    <ellipse cx="50" cy="55" rx="42" ry="47"/>
-  </clipPath>
-  <g clip-path="url(#oval-clip)">
+  <defs>
+    <clipPath id="oval-mask">
+      <ellipse cx="50" cy="55" rx="44" ry="50"/>
+    </clipPath>
+  </defs>
+  <ellipse cx="50" cy="55" rx="44" ry="50" fill="none" stroke="#feeee2" stroke-width="3"/>
+  <g clip-path="url(#oval-mask)" transform="rotate(-12 50 55)">
     <g>
-      <animateTransform attributeName="transform" type="translate" from="0 0" to="-116 0" dur="2.5s" repeatCount="indefinite"/>
-      <text font-family="sans-serif" font-size="14" font-weight="700" fill="#feeee2" x="0" y="30">BUY NOW • BUY NOW • BUY NOW • BUY NOW • </text>
-      <text font-family="sans-serif" font-size="14" font-weight="700" fill="#feeee2" x="116" y="30">BUY NOW • BUY NOW • BUY NOW • BUY NOW • </text>
-      <text font-family="sans-serif" font-size="14" font-weight="700" fill="#feeee2" x="0" y="46">BUY NOW • BUY NOW • BUY NOW • BUY NOW • </text>
-      <text font-family="sans-serif" font-size="14" font-weight="700" fill="#feeee2" x="116" y="46">BUY NOW • BUY NOW • BUY NOW • BUY NOW • </text>
-      <text font-family="sans-serif" font-size="14" font-weight="700" fill="#feeee2" x="0" y="62">BUY NOW • BUY NOW • BUY NOW • BUY NOW • </text>
-      <text font-family="sans-serif" font-size="14" font-weight="700" fill="#feeee2" x="116" y="62">BUY NOW • BUY NOW • BUY NOW • BUY NOW • </text>
-      <text font-family="sans-serif" font-size="14" font-weight="700" fill="#feeee2" x="0" y="78">BUY NOW • BUY NOW • BUY NOW • BUY NOW • </text>
-      <text font-family="sans-serif" font-size="14" font-weight="700" fill="#feeee2" x="116" y="78">BUY NOW • BUY NOW • BUY NOW • BUY NOW • </text>
+      <animateTransform attributeName="transform" type="translate" values="0,0;-80,0;0,0" dur="4s" repeatCount="indefinite"/>
+      <text font-family="sans-serif" font-size="11" font-weight="700" fill="#feeee2" letter-spacing="1" y="22">BUY NOW  BUY NOW  BUY NOW  BUY NOW  BUY NOW  BUY NOW  </text>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="-40,0;40,0;-40,0" dur="4s" repeatCount="indefinite"/>
+      <text font-family="sans-serif" font-size="11" font-weight="700" fill="#feeee2" letter-spacing="1" y="38">BUY NOW  BUY NOW  BUY NOW  BUY NOW  BUY NOW  BUY NOW  </text>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,0;-80,0;0,0" dur="3.5s" repeatCount="indefinite"/>
+      <text font-family="sans-serif" font-size="11" font-weight="700" fill="#feeee2" letter-spacing="1" y="54">BUY NOW  BUY NOW  BUY NOW  BUY NOW  BUY NOW  BUY NOW  </text>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="-40,0;40,0;-40,0" dur="3.5s" repeatCount="indefinite"/>
+      <text font-family="sans-serif" font-size="11" font-weight="700" fill="#feeee2" letter-spacing="1" y="70">BUY NOW  BUY NOW  BUY NOW  BUY NOW  BUY NOW  BUY NOW  </text>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,0;-80,0;0,0" dur="4.2s" repeatCount="indefinite"/>
+      <text font-family="sans-serif" font-size="11" font-weight="700" fill="#feeee2" letter-spacing="1" y="86">BUY NOW  BUY NOW  BUY NOW  BUY NOW  BUY NOW  BUY NOW  </text>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="-40,0;40,0;-40,0" dur="4.2s" repeatCount="indefinite"/>
+      <text font-family="sans-serif" font-size="11" font-weight="700" fill="#feeee2" letter-spacing="1" y="102">BUY NOW  BUY NOW  BUY NOW  BUY NOW  BUY NOW  BUY NOW  </text>
     </g>
   </g>
 </svg>
