@@ -6,7 +6,7 @@ main .text-panel {
 }
 
 main .text-panel h2 {
-  font-size: var(--heading-font-size-xxl);
+  font-size: 48px;
   margin-bottom: 1.5rem;
 }
 
@@ -19,5 +19,9 @@ main .text-panel p {
 @media (width >= 900px) {
   main .text-panel {
     padding: 120px 48px;
+  }
+
+  main .text-panel h2 {
+    font-size: 80px;
   }
 }

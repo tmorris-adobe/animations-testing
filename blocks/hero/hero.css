@@ -49,17 +49,17 @@ main .hero .hero-images {
 
 main .hero .hero-bottle {
   position: fixed;
-  top: 50%;
+  top: 5vh;
   left: 50%;
   z-index: 10;
-  margin-left: -60px;
-  margin-top: -150px;
+  margin-left: -75px;
   will-change: transform;
   pointer-events: none;
 }
 
 main .hero .hero-bottle img {
-  height: 300px;
+  height: 80vh;
+  max-height: 600px;
   width: auto;
 }
 
@@ -78,11 +78,17 @@ main .hero .hero-fire img {
     flex-direction: row;
     padding: var(--hero-padding-desktop);
     justify-content: space-between;
+    min-height: 90vh;
   }
 
   main .hero .hero-content {
     text-align: left;
-    flex: 1;
+    flex: 0 0 280px;
+  }
+
+  main .hero .hero-content h1 {
+    font-size: 50px;
+    line-height: 0.95;
   }
 
   main .hero .hero-images {
@@ -90,15 +96,19 @@ main .hero .hero-fire img {
   }
 
   main .hero .hero-bottle {
-    margin-left: -80px;
-    margin-top: -200px;
+    margin-left: -125px;
   }
 
   main .hero .hero-bottle img {
-    height: 400px;
+    height: 90vh;
+    max-height: 880px;
   }
 
   main .hero .hero-logo img {
-    width: 180px;
+    width: 250px;
+  }
+
+  main .hero .hero-fire img {
+    width: 140px;
   }
 }

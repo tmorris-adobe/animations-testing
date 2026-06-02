@@ -1,9 +1,13 @@
 main .marquee {
   overflow: hidden;
-  padding: 12px 0;
+  padding: 16px 0;
   background-color: var(--background-color);
-  border-top: 1px solid var(--accent-color);
-  border-bottom: 1px solid var(--accent-color);
+}
+
+@media (width >= 900px) {
+  main .marquee {
+    padding: 20px 0;
+  }
 }
 
 main .marquee .marquee-wrapper {
@@ -30,7 +34,7 @@ main .marquee .marquee-wrapper.marquee-right .marquee-track {
 main .marquee .marquee-item {
   font-family: var(--heading-font-family);
   font-weight: 700;
-  font-size: var(--heading-font-size-s);
+  font-size: 28px;
   text-transform: uppercase;
   color: var(--accent-color);
 }
@@ -38,9 +42,19 @@ main .marquee .marquee-item {
 main .marquee .marquee-separator {
   font-family: var(--heading-font-family);
   font-weight: 700;
-  font-size: var(--heading-font-size-s);
+  font-size: 28px;
   color: var(--accent-color);
   opacity: 0.6;
+}
+
+@media (width >= 900px) {
+  main .marquee .marquee-item {
+    font-size: 50px;
+  }
+
+  main .marquee .marquee-separator {
+    font-size: 50px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

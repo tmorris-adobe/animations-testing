@@ -29,7 +29,7 @@ main .scroll-text .scroll-text-strip.scroll-text-left .scroll-text-track {
 main .scroll-text .scroll-text-item {
   font-family: var(--heading-font-family);
   font-weight: 700;
-  font-size: var(--heading-font-size-l);
+  font-size: 20px;
   text-transform: uppercase;
   color: var(--accent-color);
   padding: 0 1rem;
@@ -37,7 +37,7 @@ main .scroll-text .scroll-text-item {
 
 @media (width >= 900px) {
   main .scroll-text .scroll-text-item {
-    font-size: var(--heading-font-size-xl);
+    font-size: 29px;
   }
 }
 

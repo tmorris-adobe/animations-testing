@@ -21,12 +21,18 @@ main .large-text .large-text-track.large-text-left.is-scrolling {
 main .large-text .large-text-item {
   font-family: var(--heading-font-family);
   font-weight: 700;
-  font-size: var(--display-font-size);
+  font-size: 80px;
   text-transform: uppercase;
   color: var(--accent-color);
   white-space: nowrap;
   line-height: 1;
   padding: 0 2rem;
+}
+
+@media (width >= 900px) {
+  main .large-text .large-text-item {
+    font-size: 200px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

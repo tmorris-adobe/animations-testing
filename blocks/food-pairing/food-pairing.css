@@ -34,11 +34,17 @@ main .food-pairing .food-pairing-label {
 
 main .food-pairing .food-pairing-food {
   font-family: var(--heading-font-family);
-  font-size: var(--display-font-size);
+  font-size: 80px;
   font-weight: 700;
   color: var(--accent-color);
   text-transform: uppercase;
   line-height: 1;
+}
+
+@media (width >= 900px) {
+  main .food-pairing .food-pairing-food {
+    font-size: 200px;
+  }
 }
 
 main .food-pairing .food-pairing-image {
@@ -51,13 +57,13 @@ main .food-pairing .food-pairing-image picture {
 }
 
 main .food-pairing .food-pairing-image img {
-  height: 100px;
+  height: 80px;
   width: auto;
 }
 
 @media (width >= 900px) {
   main .food-pairing .food-pairing-image img {
-    height: 160px;
+    height: 180px;
   }
 }
 
