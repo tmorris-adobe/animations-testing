@@ -62,7 +62,7 @@ export default function decorate(block) {
     if (!ticking) {
       requestAnimationFrame(() => {
         const { scrollY } = window;
-        const speed = 0.0035;
+        const speed = 0.0026;
         const translateX = Math.sin(scrollY * speed) * 55;
         const rotate = translateX * 0.15;
 
