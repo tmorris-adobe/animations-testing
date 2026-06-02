@@ -1,39 +1,110 @@
 @import url('./hero-tokens.css');
 
-.hero-container .hero-wrapper {
+main .hero-container {
+  padding: 0;
+}
+
+main .hero-container > div {
   max-width: unset;
   padding: 0;
 }
 
-.hero {
+main .hero {
   position: relative;
-  padding: var(--hero-padding);
   min-height: var(--hero-min-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--hero-padding);
+  text-align: center;
+  overflow: hidden;
 }
 
-.hero h1 {
-  max-width: var(--hero-heading-max-width);
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+main .hero .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
 }
 
-.hero picture {
+main .hero .hero-content h1 {
+  font-size: var(--heading-font-size-xxl);
+  margin-bottom: 1rem;
+}
+
+main .hero .hero-content p {
+  font-size: var(--body-font-size-m);
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+main .hero .hero-images {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+main .hero .hero-bottle {
+  position: sticky;
+  top: 20vh;
+  z-index: 3;
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+
+main .hero .hero-bottle img {
+  height: 60vh;
+  width: auto;
+  max-height: 500px;
+}
+
+main .hero .hero-logo img {
+  width: 120px;
+  height: auto;
+}
+
+main .hero .hero-fire img {
+  width: 80px;
+  height: auto;
+}
+
+main .hero .hero-badge {
   position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  bottom: 10%;
+  right: 10%;
+  text-align: right;
 }
 
-.hero img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+main .hero .hero-badge h2 {
+  font-size: var(--heading-font-size-m);
+  margin: 0;
 }
 
 @media (width >= 900px) {
-  .hero {
+  main .hero {
+    flex-direction: row;
     padding: var(--hero-padding-desktop);
+    justify-content: space-between;
+  }
+
+  main .hero .hero-content {
+    text-align: left;
+    flex: 1;
+  }
+
+  main .hero .hero-images {
+    flex: 1;
+  }
+
+  main .hero .hero-bottle img {
+    max-height: 700px;
+    height: 70vh;
+  }
+
+  main .hero .hero-logo img {
+    width: 180px;
   }
 }

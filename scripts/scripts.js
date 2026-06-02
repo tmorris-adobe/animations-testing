@@ -482,6 +482,27 @@ async function loadEager(doc) {
   }
 }
 
+function initScrollReveal(main) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const sections = main.querySelectorAll('.section');
+  sections.forEach((section, i) => {
+    if (i === 0) return;
+    section.classList.add('scroll-reveal');
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  main.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
+}
+
 /**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
@@ -491,6 +512,8 @@ async function loadLazy(doc) {
 
   const main = doc.querySelector('main');
   await loadSections(main);
+
+  initScrollReveal(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;

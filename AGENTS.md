@@ -249,6 +249,65 @@ The Experience Catalyst hook **`.claude/hooks/footer-validation-gate.js`** (tabl
 
 ---
 
+### Animation Migration (EDS Animations Assistant)
+
+**When a user asks to migrate, detect, replicate, or recreate animations from a source website, ALWAYS use the EDS Animations Assistant skill.** This covers CSS animations, JavaScript animations, Lottie/bodymovin, scroll-triggered effects, counter animations, parallax, SVG animations, and any custom animation regardless of original implementation.
+
+**Trigger patterns:**
+- User says: "migrate animations", "replicate animations", "detect animations", "recreate animations" → invoke directly.
+- User says: "add scroll effects", "animate on scroll", "counter animation", "lottie animation" → invoke directly.
+- User references animation work on a source site, or asks why animations aren't working → invoke for analysis/remediation.
+
+**How to invoke:**
+Read and follow the complete workflow in `.agents/skills/eds-animations-assistant/SKILL.md`. Execute phases in order: Detection → Analysis → Recreation → Integration → Verification. Do not skip phases.
+
+**Supporting files:**
+- `.agents/skills/eds-animations-assistant/eds-animation-patterns.md` — Quick reference for EDS animation patterns
+- `.agents/skills/eds-animations-assistant/animation-verification.md` — Verification criteria and automated checks
+- `.agents/skills/eds-animations-assistant/detect-animations.js` — Detection script to run via Playwright on source pages
+- `.agents/skills/eds-animations-assistant/verify-animations.js` — Verification script to run on EDS pages after migration
+
+**Key rules:**
+- No animation libraries except `lottie-web` (loaded via `delayed.js`)
+- All animations must respect `prefers-reduced-motion: reduce`
+- Only animate `transform` and `opacity` (compositor-friendly properties)
+- No animations on the first section during `loadEager` (protects LCP)
+- Use IntersectionObserver for scroll-triggered animations
+- Content must be visible and functional without animations (progressive enhancement)
+
+**Do NOT use for:** General block development without animations, design system extraction, or page migration (use appropriate skills for those tasks first).
+
+---
+
+### Project Tracking (ExCat Project Tracking)
+
+**Unified project tracking lifecycle: journal sessions, problems reference, time reports, and status briefings.** Maintains `journal/journal.md`, `problems-reference.md`, `time-tracking.md`, and `project-context.md`. Use at session start/end or for status, time, and problem queries.
+
+**Trigger patterns:**
+- User says: "catch me up", "status", "where did we leave off", "resume" → status mode (+ open session if needed).
+- User says: "journal", "log session", "update journal" → journal mode.
+- User says: "update problem tracker", "how did we fix X", "review problems" → problems mode.
+- User says: "time report", "how much time today", "weekly summary", "timesheet" → time mode.
+- User says: "close session", "log session" (at end of work) → close checklist (all modes).
+
+**How to invoke:**
+Read and follow `.agents/skills/excat-project-tracking/SKILL.md`. Follow the session lifecycle: OPEN → WORK → CLOSE. Use the appropriate mode based on the trigger.
+
+**Session lifecycle:**
+1. **OPEN** — Status briefing + start session entry in `journal.md` + set `session-state.yaml`
+2. **WORK** — Log actions and problems as they happen (append to current session)
+3. **CLOSE** — Finalize journal → problems → time → metrics → context (mandatory checklist)
+
+**Key rules:**
+- `journal.md` is the source of truth — all derived files regenerated from it
+- Append-only journal — never edit past sessions
+- Do not fabricate time, problems, or status data
+- One active session at a time — close before opening another
+
+**Do NOT use for:** General coding tasks, design extraction, or page migration — this skill tracks project progress, not implementation.
+
+---
+
 ## Block architecture
 
 **File structure**: Every block lives in `blocks/{blockname}/` with two files: `{blockname}.css` and `{blockname}.js` (must export default `decorate(block)`).
